@@ -404,6 +404,48 @@
                 gap: 28px;
             }
         }
+    
+        /* Navigation specific dark mode fixes */
+        nav {
+            background-color: var(--bg-secondary);
+            transition: background-color 0.3s ease;
+        }
+
+        [data-theme="dark"] nav {
+            background-color: var(--bg-secondary);
+        }
+
+        [data-theme="dark"] nav.bg-white {
+            background-color: var(--bg-secondary) !important;
+        }
+
+        [data-theme="dark"] nav.bg-white\/90 {
+            background-color: rgba(26, 26, 26, 0.9) !important;
+        }
+
+        /* Additional dark mode fixes */
+        [data-theme="dark"] .shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="dark"] .border-gray-200 {
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] .border-gray-300 {
+            border-color: var(--border-color);
+        }
+
+        [data-theme="dark"] input, [data-theme="dark"] textarea {
+            background-color: var(--bg-secondary);
+            border-color: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        [data-theme="dark"] input:focus, [data-theme="dark"] textarea:focus {
+            border-color: var(--primary);
+        }
+
     </style>
 </head>
 <body>
@@ -457,7 +499,7 @@
                         <a href="/workshops.html" class="block text-gray-900 hover:text-primary transition-colors duration-200">Workshops</a>
                         <a href="/upcoming.html" class="block text-gray-900 hover:text-primary transition-colors duration-200">Upcoming</a>
                         <a href="/contact.html" class="block text-gray-900 hover:text-primary transition-colors duration-200">Contact</a>
-                        <button class="theme-toggle w-full text-left flex items-center space-x-2" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                        <button class="theme-toggle w-full text-left flex items-center justify-center" onclick="toggleTheme()" aria-label="Toggle dark mode">
                             <svg id="theme-icon-mobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="5"/>
                                 <line x1="12" y1="1" x2="12" y2="3"/>
@@ -469,7 +511,6 @@
                                 <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
                                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
                             </svg>
-                            <span id="theme-text">Dark Mode</span>
                         </button>
                     </div>
                 </div>
@@ -676,13 +717,19 @@
             updateThemeIcon(newTheme);
         }
 
-        function updateThemeIcon(theme) {
+                function updateThemeIcon(theme) {
             const desktopIcon = document.getElementById('theme-icon');
             const mobileIcon = document.getElementById('theme-icon-mobile');
-            const themeText = document.getElementById('theme-text');
             
             if (theme === 'dark') {
-                // Sun icon for dark mode (to switch to light)
+                // Moon icon for dark mode (current state)
+                const moonIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>`;
+                if (desktopIcon) desktopIcon.innerHTML = moonIcon;
+                if (mobileIcon) mobileIcon.innerHTML = moonIcon;
+            } else {
+                // Sun icon for light mode (current state)
                 const sunIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5"/>
                     <line x1="12" y1="1" x2="12" y2="3"/>
@@ -696,8 +743,8 @@
                 </svg>`;
                 if (desktopIcon) desktopIcon.innerHTML = sunIcon;
                 if (mobileIcon) mobileIcon.innerHTML = sunIcon;
-                if (themeText) themeText.textContent = 'Light Mode';
-            } else {
+            }
+        } else {
                 // Moon icon for light mode (to switch to dark)
                 const moonIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
@@ -744,17 +791,30 @@
             }
         });
         
+        
         // Handle scroll effect on navigation
         let isScrolled = false;
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            
             if (window.scrollY > 80 && !isScrolled) {
-                nav.classList.remove('bg-white/90', 'backdrop-blur-sm');
-                nav.classList.add('bg-white', 'shadow-lg');
+                if (currentTheme === 'dark') {
+                    nav.classList.remove('bg-white/90', 'backdrop-blur-sm');
+                    nav.classList.add('bg-gray-900', 'shadow-lg');
+                } else {
+                    nav.classList.remove('bg-white/90', 'backdrop-blur-sm');
+                    nav.classList.add('bg-white', 'shadow-lg');
+                }
                 isScrolled = true;
             } else if (window.scrollY <= 80 && isScrolled) {
-                nav.classList.remove('bg-white', 'shadow-lg');
-                nav.classList.add('bg-white/90', 'backdrop-blur-sm');
+                if (currentTheme === 'dark') {
+                    nav.classList.remove('bg-gray-900', 'shadow-lg');
+                    nav.classList.add('bg-white/90', 'backdrop-blur-sm');
+                } else {
+                    nav.classList.remove('bg-white', 'shadow-lg');
+                    nav.classList.add('bg-white/90', 'backdrop-blur-sm');
+                }
                 isScrolled = false;
             }
         });

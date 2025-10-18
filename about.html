@@ -446,6 +446,83 @@
             border-color: var(--primary);
         }
 
+    
+        /* Comprehensive dark mode fixes */
+        [data-theme="dark"] .text-gray-900 {
+            color: var(--text-primary) !important;
+        }
+        
+        [data-theme="dark"] nav a {
+            color: var(--text-primary) !important;
+        }
+        
+        [data-theme="dark"] nav a:hover {
+            color: var(--primary) !important;
+        }
+        
+        [data-theme="dark"] nav a.text-primary {
+            color: var(--primary) !important;
+        }
+        
+        /* Fix white backgrounds in dark mode */
+        [data-theme="dark"] .bg-white {
+            background-color: var(--bg-secondary) !important;
+        }
+        
+        [data-theme="dark"] .bg-gray-50 {
+            background-color: var(--bg-tertiary) !important;
+        }
+        
+        [data-theme="dark"] .bg-gray-100 {
+            background-color: var(--bg-tertiary) !important;
+        }
+        
+        [data-theme="dark"] .bg-gray-200 {
+            background-color: var(--bg-tertiary) !important;
+        }
+        
+        [data-theme="dark"] .bg-gray-300 {
+            background-color: var(--bg-tertiary) !important;
+        }
+        
+        /* Fix form elements */
+        [data-theme="dark"] input, [data-theme="dark"] textarea {
+            background-color: var(--bg-secondary) !important;
+            border-color: var(--border-color) !important;
+            color: var(--text-primary) !important;
+        }
+        
+        [data-theme="dark"] input:focus, [data-theme="dark"] textarea:focus {
+            border-color: var(--primary) !important;
+            box-shadow: 0 0 0 3px rgba(140, 83, 255, 0.1) !important;
+        }
+        
+        /* Fix cards and containers */
+        [data-theme="dark"] .card {
+            background-color: var(--bg-secondary) !important;
+            border-color: var(--border-color) !important;
+        }
+        
+        /* Fix mobile menu */
+        [data-theme="dark"] #mobile-menu {
+            background-color: var(--bg-secondary) !important;
+            border-color: var(--border-color) !important;
+        }
+        
+        /* Fix footer */
+        [data-theme="dark"] footer {
+            background-color: var(--bg-secondary) !important;
+        }
+        
+        /* Fix any remaining white elements */
+        [data-theme="dark"] * {
+            background-color: inherit !important;
+        }
+        
+        [data-theme="dark"] .bg-white\/90 {
+            background-color: rgba(26, 26, 26, 0.9) !important;
+        }
+
     </style>
 </head>
 <body>

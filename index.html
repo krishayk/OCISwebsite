@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,17 +85,42 @@
         }
     </script>
     <style>
+        :root {
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f9fafb;
+            --text-primary: #111111;
+            --text-secondary: #6b7280;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --bg-gradient-1: radial-gradient(circle at 20% 80%, rgba(140, 83, 255, 0.05) 0%, transparent 50%);
+            --bg-gradient-2: radial-gradient(circle at 80% 20%, rgba(82, 113, 255, 0.05) 0%, transparent 50%);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --bg-tertiary: #262626;
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3a3;
+            --text-muted: #737373;
+            --border-color: #404040;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --bg-gradient-1: radial-gradient(circle at 20% 80%, rgba(140, 83, 255, 0.1) 0%, transparent 50%);
+            --bg-gradient-2: radial-gradient(circle at 80% 20%, rgba(82, 113, 255, 0.1) 0%, transparent 50%);
+        }
+
         html {
             scroll-behavior: smooth;
         }
         
         body {
             font-family: 'Inter', sans-serif;
-            color: #111111;
-            background-color: #fafafa;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(140, 83, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(82, 113, 255, 0.05) 0%, transparent 50%);
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            background-image: var(--bg-gradient-1), var(--bg-gradient-2);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -221,13 +246,97 @@
         }
         
         .card {
-            background: white;
+            background: var(--bg-secondary);
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: var(--shadow);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
         
         .text-muted {
-            color: #6b7280;
+            color: var(--text-muted);
+        }
+
+        .bg-gray-50 {
+            background-color: var(--bg-tertiary);
+            transition: background-color 0.3s ease;
+        }
+
+        .bg-gray-900 {
+            background-color: var(--bg-secondary);
+            transition: background-color 0.3s ease;
+        }
+
+        .text-gray-900 {
+            color: var(--text-primary);
+        }
+
+        .text-gray-300 {
+            color: var(--text-secondary);
+        }
+
+        .text-gray-400 {
+            color: var(--text-muted);
+        }
+
+        .border-gray-200 {
+            border-color: var(--border-color);
+        }
+
+        .border-gray-300 {
+            border-color: var(--border-color);
+        }
+
+        .bg-white {
+            background-color: var(--bg-secondary);
+        }
+
+        .bg-white\/90 {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        [data-theme="dark"] .bg-white\/90 {
+            background-color: rgba(26, 26, 26, 0.9);
+        }
+
+        .bg-gray-100 {
+            background-color: var(--bg-tertiary);
+        }
+
+        .text-gray-600 {
+            color: var(--text-secondary);
+        }
+
+        .text-gray-700 {
+            color: var(--text-primary);
+        }
+
+        .border-gray-300 {
+            border-color: var(--border-color);
+        }
+
+        /* Dark mode toggle button */
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: var(--text-primary);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--bg-tertiary);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover svg {
+            transform: scale(1.1);
         }
         
         .fade-in {
@@ -313,6 +422,19 @@
                         <a href="/workshops.html" class="transition-colors duration-300 hover:text-primary text-gray-900">Workshops</a>
                         <a href="/upcoming.html" class="transition-colors duration-300 hover:text-primary text-gray-900">Upcoming</a>
                         <a href="/contact.html" class="transition-colors duration-300 hover:text-primary text-gray-900">Contact</a>
+                        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                            <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"/>
+                                <line x1="12" y1="1" x2="12" y2="3"/>
+                                <line x1="12" y1="21" x2="12" y2="23"/>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                                <line x1="1" y1="12" x2="3" y2="12"/>
+                                <line x1="21" y1="12" x2="23" y2="12"/>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                            </svg>
+                        </button>
                     </div>
 
                     <!-- Mobile Menu Button -->
@@ -333,6 +455,20 @@
                         <a href="/workshops.html" class="block text-gray-900 hover:text-primary transition-colors duration-200">Workshops</a>
                         <a href="/upcoming.html" class="block text-gray-900 hover:text-primary transition-colors duration-200">Upcoming</a>
                         <a href="/contact.html" class="block text-gray-900 hover:text-primary transition-colors duration-200">Contact</a>
+                        <button class="theme-toggle w-full text-left flex items-center space-x-2" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                            <svg id="theme-icon-mobile" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5"/>
+                                <line x1="12" y1="1" x2="12" y2="3"/>
+                                <line x1="12" y1="21" x2="12" y2="23"/>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                                <line x1="1" y1="12" x2="3" y2="12"/>
+                                <line x1="21" y1="12" x2="23" y2="12"/>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                            </svg>
+                            <span id="theme-text">Dark Mode</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -453,7 +589,7 @@
                     
                     <!-- Social links -->
                     <div class="flex flex-wrap gap-6 justify-center">
-                        <a href="mailto:info@ocis.org" class="text-small text-gray-300 hover:text-primary transition-colors duration-200">
+                        <a href="mailto:contact@calinnovators.org" class="text-small text-gray-300 hover:text-primary transition-colors duration-200">
                             Email
                         </a>
                         <a href="https://discord.gg/ocis" class="text-small text-gray-300 hover:text-primary transition-colors duration-200" target="_blank" rel="noopener noreferrer">
@@ -477,6 +613,61 @@
     </div>
 
     <script>
+        // Dark mode functionality
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            // Default to dark mode as requested
+            const theme = savedTheme || (prefersDark ? 'dark' : 'dark');
+            document.documentElement.setAttribute('data-theme', theme);
+            updateThemeIcon(theme);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const desktopIcon = document.getElementById('theme-icon');
+            const mobileIcon = document.getElementById('theme-icon-mobile');
+            const themeText = document.getElementById('theme-text');
+            
+            if (theme === 'dark') {
+                // Sun icon for dark mode (to switch to light)
+                const sunIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>`;
+                if (desktopIcon) desktopIcon.innerHTML = sunIcon;
+                if (mobileIcon) mobileIcon.innerHTML = sunIcon;
+                if (themeText) themeText.textContent = 'Light Mode';
+            } else {
+                // Moon icon for light mode (to switch to dark)
+                const moonIcon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>`;
+                if (desktopIcon) desktopIcon.innerHTML = moonIcon;
+                if (mobileIcon) mobileIcon.innerHTML = moonIcon;
+                if (themeText) themeText.textContent = 'Dark Mode';
+            }
+        }
+
+        // Initialize theme on page load
+        document.addEventListener('DOMContentLoaded', initTheme);
+
         let isMobileMenuOpen = false;
         
         function toggleMobileMenu() {

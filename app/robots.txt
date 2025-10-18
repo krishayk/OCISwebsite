@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ocis.org/sitemap.xml

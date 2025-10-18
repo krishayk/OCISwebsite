@@ -1,85 +1,89 @@
-# Official California Innovators Society (OCIS) Website
+# OCIS Static Website
 
-A modern, responsive website for the Official California Innovators Society built with Next.js 14, TypeScript, and Tailwind CSS.
+This is the static HTML version of the Official California Innovators Society website, ready for deployment on GitHub Pages or any static hosting service.
 
 ## Features
 
-- **Modern Design**: Clean, professional design with brand colors (#8C53FF, #5271FF, #000000)
-- **Dark Mode**: Complete dark/light mode toggle with seamless transitions
-- **Responsive**: Fully responsive design that works on all devices
-- **Accessibility**: WCAG AA compliant with proper semantic HTML
-- **SEO Optimized**: Proper metadata and SEO optimization
-- **TypeScript**: Full type safety throughout the application
+- **Fully Static**: No server-side rendering or build process required
+- **No Dark Mode**: Consistent light theme throughout
+- **Photo System**: Numbered placeholder system (Photo #1 through Photo #15)
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Interactive Elements**: Contact forms, modal dialogs, and mobile navigation
+- **SEO Optimized**: Proper meta tags and structured data
 
-## Tech Stack
-
-- **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS with custom theme
-- **Icons**: Custom SVG icons
-- **Fonts**: Space Grotesk, Poppins, Inter
-
-## Pages
-
-- **Home**: Hero section, overview grid, proof points
-- **About**: Organization overview, how we work, values
-- **Workshops**: BASS workshop recap and information
-- **Upcoming**: CIVIC Innovation and future events
-- **Contact**: Contact form and information
-
-## Getting Started
-
-1. Install dependencies:
-```bash
-npm install
-```
-
-2. Run the development server:
-```bash
-npm run dev
-```
-
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Project Structure
+## File Structure
 
 ```
-├── app/                    # Next.js App Router pages
-│   ├── about/             # About page
-│   ├── contact/           # Contact page
-│   ├── upcoming/          # Upcoming events page
-│   ├── workshops/         # Workshops page
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
-├── components/            # Reusable components
-│   ├── Footer.tsx         # Footer component
-│   ├── Layout.tsx         # Main layout wrapper
-│   ├── Modal.tsx          # Modal component
-│   ├── Nav.tsx            # Navigation component
-│   ├── Placeholder.tsx    # Placeholder component
-│   └── ThemeToggle.tsx    # Dark mode toggle
-├── lib/                   # Utility functions
-│   └── seo.ts            # SEO helper functions
-└── styles/               # Additional styles
+static/
+├── index.html          # Homepage
+├── about.html          # About page
+├── workshops.html      # Workshops page
+├── contact.html        # Contact page
+├── upcoming.html       # Upcoming events page
+└── README.md          # This file
 ```
 
-## Brand Guidelines
+## Photo System
 
-- **Primary Color**: #8C53FF (Purple)
-- **Secondary Color**: #5271FF (Blue)
-- **Base Color**: #000000 (Black)
-- **Typography**: Space Grotesk for headings, Inter for body text
-- **Spacing**: Consistent spacing scale throughout
+The website uses a numbered photo system with placeholders:
+- **Photo #1**: Hero image on homepage
+- **Photo #2-4**: Overview cards on homepage
+- **Photo #5**: About page collaboration image
+- **Photo #6-8**: How We Work section images
+- **Photo #9-11**: Workshop images
+- **Photo #12**: Contact page decorative graphic
+- **Photo #13**: CIVIC Innovation graphic
+- **Photo #14-15**: Upcoming events images
 
-## Contributing
+To add actual photos:
+1. Add your images to the `photos/` folder in the project root
+2. Replace the placeholder divs with `<img>` tags pointing to your photos
+3. Maintain the same aspect ratios and styling
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+## Deployment
+
+### GitHub Pages
+1. Push the `static/` folder contents to your repository
+2. Enable GitHub Pages in repository settings
+3. Set source to the main branch and `/` (root) folder
+
+### Other Static Hosts
+Upload all files in the `static/` folder to your hosting provider's web root directory.
+
+## Customization
+
+### Colors
+The website uses a purple gradient theme:
+- Primary: #8C53FF
+- Secondary: #5271FF
+
+### Fonts
+- Headings: Space Grotesk, Poppins, sans-serif
+- Body: Inter, sans-serif
+
+### Styling
+All styles are embedded in each HTML file using Tailwind CSS via CDN, making it easy to customize without build tools.
+
+## Browser Support
+
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile responsive design
+- No JavaScript framework dependencies
+
+## Contact Form
+
+The contact form is client-side only and will show a success message. For production use, you'll need to:
+1. Add a form handler (Netlify Forms, Formspree, etc.)
+2. Update the form action and method attributes
+3. Add proper validation and error handling
+
+## Performance
+
+- Optimized for fast loading
+- Minimal external dependencies
+- Compressed and efficient CSS
+- No unnecessary JavaScript
 
 ## License
 
 © 2025 Official California Innovators Society. All rights reserved.
-

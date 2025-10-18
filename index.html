@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official California Innovators Society | Empowering Students. Strengthening Communities.</title>
+    <meta name="description" content="OCIS connects youth innovation with real-world business and civic challenges across California through hands-on workshops and collaboration.">
+    <meta name="keywords" content="California, innovation, students, workshops, business, civic, collaboration, youth">
+    <meta name="author" content="Official California Innovators Society">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ocis.org/">
+    <meta property="og:title" content="Official California Innovators Society | Empowering Students. Strengthening Communities.">
+    <meta property="og:description" content="OCIS connects youth innovation with real-world business and civic challenges across California through hands-on workshops and collaboration.">
+    <meta property="og:site_name" content="Official California Innovators Society">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ocis.org/">
+    <meta property="twitter:title" content="Official California Innovators Society | Empowering Students. Strengthening Communities.">
+    <meta property="twitter:description" content="OCIS connects youth innovation with real-world business and civic challenges across California through hands-on workshops and collaboration.">
+    
+    <link rel="canonical" href="https://ocis.org/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8C53FF',
+                        secondary: '#5271FF',
+                    },
+                    fontFamily: {
+                        'heading': ['Space Grotesk', 'Poppins', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    fontSize: {
+                        'h1-desktop': ['48px', { lineHeight: '1.25', letterSpacing: '0.01em' }],
+                        'h2-desktop': ['36px', { lineHeight: '1.25', letterSpacing: '0.01em' }],
+                        'h3-desktop': ['28px', { lineHeight: '1.3', letterSpacing: '0.01em' }],
+                        'body-desktop': ['18px', { lineHeight: '1.6' }],
+                        'small-desktop': ['16px', { lineHeight: '1.6' }],
+                        'h1-mobile': ['34px', { lineHeight: '1.25', letterSpacing: '0.01em' }],
+                        'h2-mobile': ['28px', { lineHeight: '1.25', letterSpacing: '0.01em' }],
+                        'h3-mobile': ['22px', { lineHeight: '1.3', letterSpacing: '0.01em' }],
+                        'body-mobile': ['16px', { lineHeight: '1.6' }],
+                        'small-mobile': ['14px', { lineHeight: '1.6' }],
+                    },
+                    spacing: {
+                        'section-mobile': '80px',
+                        'section-tablet': '104px',
+                        'section-desktop': '128px',
+                        'page-mobile': '24px',
+                        'page-tablet': '40px',
+                        'page-desktop': '64px',
+                        'block-mobile': '24px',
+                        'block-tablet': '32px',
+                        'block-desktop': '40px',
+                        'card-mobile': '16px',
+                        'card-tablet': '24px',
+                        'card-desktop': '28px',
+                        'nav-mobile': '64px',
+                        'nav-desktop': '72px',
+                        'footer-mobile': '48px',
+                        'footer-desktop': '64px',
+                    },
+                    borderRadius: {
+                        'card': '12px',
+                        'button': '10px',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                    },
+                    backgroundImage: {
+                        'gradient-primary': 'linear-gradient(90deg, #8C53FF 0%, #5271FF 100%)',
+                        'gradient-subtle': 'linear-gradient(135deg, rgba(140, 83, 255, 0.05) 0%, rgba(82, 113, 255, 0.05) 100%)',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #111111;
+            background-color: #fafafa;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(140, 83, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(82, 113, 255, 0.05) 0%, transparent 50%);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        h1 {
+            font-size: 34px;
+            line-height: 1.25;
+            letter-spacing: 0.01em;
+        }
+        
+        h2 {
+            font-size: 28px;
+            line-height: 1.25;
+            letter-spacing: 0.01em;
+        }
+        
+        h3 {
+            font-size: 22px;
+            line-height: 1.3;
+            letter-spacing: 0.01em;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .text-small {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 48px;
+            }
+            
+            h2 {
+                font-size: 36px;
+            }
+            
+            h3 {
+                font-size: 28px;
+            }
+            
+            p {
+                font-size: 18px;
+            }
+            
+            .text-small {
+                font-size: 16px;
+            }
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.2s;
+            background: linear-gradient(90deg, #8C53FF 0%, #5271FF 100%);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: scale(1.05);
+            filter: brightness(1.05);
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid;
+            border-image: linear-gradient(90deg, #8C53FF 0%, #5271FF 100%) 1;
+            color: #8C53FF;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            filter: brightness(1.05);
+        }
+        
+        .text-primary {
+            color: #8C53FF;
+        }
+        
+        .text-secondary {
+            color: #5271FF;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .page-padding {
+            padding: 0 24px;
+        }
+        
+        .block-gap {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        .card-gap {
+            display: grid;
+            gap: 16px;
+        }
+        
+        .bg-gradient-subtle {
+            background: linear-gradient(135deg, rgba(140, 83, 255, 0.05) 0%, rgba(82, 113, 255, 0.05) 100%);
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .text-muted {
+            color: #6b7280;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .fade-up {
+            animation: fadeUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 104px 0;
+            }
+            
+            .page-padding {
+                padding: 0 40px;
+            }
+            
+            .block-gap {
+                gap: 32px;
+            }
+            
+            .card-gap {
+                gap: 24px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding: 128px 0;
+            }
+            
+            .page-padding {
+                padding: 0 64px;
+            }
+            
+            .block-gap {
+                gap: 40px;
+            }
+            
+            .card-gap {
+                gap: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Navigation -->
+        <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm">
+            <div class="container mx-auto px-page-mobile md:px-page-tablet lg:px-page-desktop">
+                <div class="flex items-center justify-between h-nav-mobile md:h-nav-desktop">
+                    <!-- Logo -->
+                    <a href="/" class="text-xl font-bold transition-colors duration-300 text-gray-900">
+                        Official California Innovators Society
+                    </a>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="/" class="transition-colors duration-300 hover:text-primary text-gray-900 text-primary">Home</a>
+                        <a href="/about.html" class="transition-colors duration-300 hover:text-primary text-gray-900">About</a>
+                        <a href="/workshops.html" class="transition-colors duration-300 hover:text-primary text-gray-900">Workshops</a>
+                        <a href="/upcoming.html" class="transition-colors duration-300 hover:text-primary text-gray-900">Upcoming</a>
+                        <a href="/contact.html" class="transition-colors duration-300 hover:text-primary text-gray-900">Contact</a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden transition-colors duration-300 text-gray-900" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+                        <div class="w-6 h-6 flex flex-col justify-center space-y-1">
+                            <span id="menu-line-1" class="block h-0.5 bg-current transition-transform duration-200"></span>
+                            <span id="menu-line-2" class="block h-0.5 bg-current transition-opacity duration-200"></span>
+                            <span id="menu-line-3" class="block h-0.5 bg-current transition-transform duration-200"></span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg transition-all duration-300 opacity-0 invisible">
+                    <div class="px-page-mobile py-4 space-y-4">
+                        <a href="/" class="block text-gray-900 hover:text-primary transition-colors duration-200 text-primary font-medium">Home</a>
+                        <a href="/about.html" class="block text-gray-900 hover:text-primary transition-colors duration-200">About</a>
+                        <a href="/workshops.html" class="block text-gray-900 hover:text-primary transition-colors duration-200">Workshops</a>
+                        <a href="/upcoming.html" class="block text-gray-900 hover:text-primary transition-colors duration-200">Upcoming</a>
+                        <a href="/contact.html" class="block text-gray-900 hover:text-primary transition-colors duration-200">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="flex-1 pt-nav-mobile md:pt-nav-desktop">
+            <div class="fade-in">
+                <!-- Hero Section -->
+                <section class="section-padding bg-gradient-subtle">
+                    <div class="container mx-auto page-padding">
+                        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                            <div class="block-gap">
+                                <h1 class="text-center lg:text-left">
+                                    Empowering Students. Strengthening Communities.
+                                </h1>
+                                <p class="text-center lg:text-left text-lg">
+                                    The Official California Innovators Society connects youth innovation with real-world business and civic challenges across California.
+                                </p>
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                                    <a href="/about.html" class="btn-primary text-center">
+                                        Learn More
+                                    </a>
+                                    <a href="/workshops.html" class="btn-secondary text-center">
+                                        Explore Workshops
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="fade-up">
+                                <div class="aspect-[16/9] w-full bg-gray-100 border border-gray-200 rounded-card flex items-center justify-center text-gray-600 font-medium text-center p-4" role="img" aria-label="Photo #1">
+                                    Photo #1
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Overview Grid -->
+                <section class="section-padding">
+                    <div class="container mx-auto page-padding">
+                        <div class="grid md:grid-cols-3 gap-8 card-gap">
+                            <div class="fade-up">
+                                <div class="card p-6 block-gap">
+                                    <h3>What We Do</h3>
+                                    <p class="text-small text-muted">
+                                        Hands on workshops that tackle real world challenges.
+                                    </p>
+                                    <div class="aspect-[3/2] w-full bg-gray-100 border border-gray-200 rounded-card flex items-center justify-center text-gray-600 font-medium text-center p-4" role="img" aria-label="Photo #2">
+                                        Photo #2
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fade-up" style="animation-delay: 60ms">
+                                <div class="card p-6 block-gap">
+                                    <h3>Who We Work With</h3>
+                                    <p class="text-small text-muted">
+                                        Students, educators, businesses, and civic leaders.
+                                    </p>
+                                    <div class="aspect-[3/2] w-full bg-gray-100 border border-gray-200 rounded-card flex items-center justify-center text-gray-600 font-medium text-center p-4" role="img" aria-label="Photo #3">
+                                        Photo #3
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fade-up" style="animation-delay: 120ms">
+                                <div class="card p-6 block-gap">
+                                    <h3>Our Mission</h3>
+                                    <p class="text-small text-muted">
+                                        Empower youth to innovate through collaboration and action.
+                                    </p>
+                                    <div class="aspect-[3/2] w-full bg-gray-100 border border-gray-200 rounded-card flex items-center justify-center text-gray-600 font-medium text-center p-4" role="img" aria-label="Photo #4">
+                                        Photo #4
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Proof Row -->
+                <section class="section-padding bg-gray-50">
+                    <div class="container mx-auto page-padding">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <div class="text-center fade-up">
+                                <p class="font-medium text-gray-900">Student led collaboration with local partners</p>
+                            </div>
+                            <div class="text-center fade-up" style="animation-delay: 60ms">
+                                <p class="font-medium text-gray-900">Actionable business and technology solutions</p>
+                            </div>
+                            <div class="text-center fade-up" style="animation-delay: 120ms">
+                                <p class="font-medium text-gray-900">Community centered outcomes</p>
+                            </div>
+                            <div class="text-center fade-up" style="animation-delay: 180ms">
+                                <p class="font-medium text-gray-900">Practical leadership and innovation skills</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white">
+            <!-- Gradient top border -->
+            <div class="h-px bg-gradient-primary"></div>
+            
+            <div class="container mx-auto px-page-mobile md:px-page-tablet lg:px-page-desktop py-footer-mobile md:py-footer-desktop">
+                <!-- Main footer content -->
+                <div class="text-center mb-8">
+                    <!-- Organization name -->
+                    <div class="text-xl font-bold mb-4 text-white">
+                        Official California Innovators Society
+                    </div>
+                    
+                    <!-- Tagline -->
+                    <div class="text-small mb-6 text-gray-300">
+                        Inspiring innovation through collaboration.
+                    </div>
+                    
+                    <!-- Social links -->
+                    <div class="flex flex-wrap gap-6 justify-center">
+                        <a href="mailto:info@ocis.org" class="text-small text-gray-300 hover:text-primary transition-colors duration-200">
+                            Email
+                        </a>
+                        <a href="https://discord.gg/ocis" class="text-small text-gray-300 hover:text-primary transition-colors duration-200" target="_blank" rel="noopener noreferrer">
+                            Discord
+                        </a>
+                        <a href="https://instagram.com" class="text-small text-gray-300 hover:text-primary transition-colors duration-200" target="_blank" rel="noopener noreferrer">
+                            Instagram
+                        </a>
+                        <a href="https://linkedin.com" class="text-small text-gray-300 hover:text-primary transition-colors duration-200" target="_blank" rel="noopener noreferrer">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Bottom line -->
+                <div class="text-center text-small text-gray-400">
+                    © 2025 Official California Innovators Society. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let isMobileMenuOpen = false;
+        
+        function toggleMobileMenu() {
+            isMobileMenuOpen = !isMobileMenuOpen;
+            const mobileMenu = document.getElementById('mobile-menu');
+            const line1 = document.getElementById('menu-line-1');
+            const line2 = document.getElementById('menu-line-2');
+            const line3 = document.getElementById('menu-line-3');
+            
+            if (isMobileMenuOpen) {
+                mobileMenu.classList.remove('opacity-0', 'invisible');
+                mobileMenu.classList.add('opacity-100', 'visible');
+                line1.classList.add('rotate-45', 'translate-y-1.5');
+                line2.classList.add('opacity-0');
+                line3.classList.add('-rotate-45', '-translate-y-1.5');
+            } else {
+                mobileMenu.classList.remove('opacity-100', 'visible');
+                mobileMenu.classList.add('opacity-0', 'invisible');
+                line1.classList.remove('rotate-45', 'translate-y-1.5');
+                line2.classList.remove('opacity-0');
+                line3.classList.remove('-rotate-45', '-translate-y-1.5');
+            }
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (!nav.contains(event.target) && isMobileMenuOpen) {
+                toggleMobileMenu();
+            }
+        });
+        
+        // Handle scroll effect on navigation
+        let isScrolled = false;
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 80 && !isScrolled) {
+                nav.classList.remove('bg-white/90', 'backdrop-blur-sm');
+                nav.classList.add('bg-white', 'shadow-lg');
+                isScrolled = true;
+            } else if (window.scrollY <= 80 && isScrolled) {
+                nav.classList.remove('bg-white', 'shadow-lg');
+                nav.classList.add('bg-white/90', 'backdrop-blur-sm');
+                isScrolled = false;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -414,7 +414,6 @@
     
         /* Navigation specific dark mode fixes */
         nav {
-            background-color: var(--bg-secondary);
             transition: background-color 0.3s ease;
         }
 
@@ -522,12 +521,32 @@
         }
         
         /* Fix any remaining white elements */
-        [data-theme="dark"] * {
-            background-color: inherit !important;
-        }
+        
         
         [data-theme="dark"] .bg-white\/90 {
             background-color: rgba(26, 26, 26, 0.9) !important;
+        }
+
+    
+        /* Proper dark mode navbar fixes */
+        [data-theme="dark"] nav {
+            background-color: var(--bg-secondary) !important;
+        }
+
+        [data-theme="dark"] nav.bg-white {
+            background-color: var(--bg-secondary) !important;
+        }
+
+        [data-theme="dark"] nav.bg-white\/90 {
+            background-color: rgba(26, 26, 26, 0.9) !important;
+        }
+
+        [data-theme="dark"] nav.bg-gray-900 {
+            background-color: var(--bg-secondary) !important;
+        }
+
+        [data-theme="dark"] #mobile-menu {
+            background-color: var(--bg-secondary) !important;
         }
 
     </style>
@@ -857,6 +876,7 @@
                 toggleMobileMenu();
             }
         });
+        
         
         
         // Handle scroll effect on navigation
